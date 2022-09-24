@@ -1,0 +1,61 @@
+<template>
+  <div class="login">
+    <div class="login-container">
+      <div class="login-left"></div>
+      <div class="login-content">
+        <div class="login-title">
+          <span class="login-title-text">Fool Admin </span>
+        </div>
+        <el-form :model="state.form" ref="formRef" :rules="rules" label-width="80px" label-position="top">
+          <el-form-item class="input-item" prop="username">
+            <el-input v-model="state.form.username" autocomplete="off" placeholder="输入账号"></el-input>
+          </el-form-item>
+          <el-form-item class="input-item" prop="password">
+            <el-input
+              :show-password="true"
+              v-model="state.form.password"
+              autocomplete="off"
+              @keyup.enter="onSubmit"
+              placeholder="输入密码"
+            ></el-input>
+          </el-form-item>
+          <el-form-item class="mt-10">
+            <el-button class="w-full min-h-50px" type="primary" @click="onSubmit">登录</el-button>
+          </el-form-item>
+        </el-form>
+      </div>
+    </div>
+  </div>
+</template>
+<script lang="ts" setup>
+import { userStoreFun } from '@/store/modules/user';
+
+const router = useRouter();
+const store = userStoreFun();
+const formRef = ref();
+const state = reactive({
+  form: {
+    username: '',
+    password: '',
+  },
+});
+const rules = {
+  username: [{ required: true, message: '请输入账号', trigger: 'change' }],
+  password: [{ required: true, message: '请输入密码', trigger: 'change' }],
+};
+const onSubmit = () => {
+  formRef.value.validate((valid: any) => {
+    if (valid) {
+      store.login(state.form).then((res) => {
+        if (res) {
+          router.push({ path: '/home' });
+        }
+      });
+    }
+  });
+};
+</script>
+
+<style lang="scss" scoped>
+@import './css/index.scss';
+</style>

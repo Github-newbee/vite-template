@@ -17,12 +17,15 @@
       </p>
       <div>{{ t('before coding') }} , {{ t('setup ide') }} <strong>VSCode</strong> + <strong>Volar</strong></div>
     </div>
+    <el-button class="w-full min-h-50px" type="primary" @click="onLogout">退出登录</el-button>
   </div>
 </template>
 
 <script setup lang="ts">
 import vitecamp from '@/assets/svg/vitecamp.svg?component';
+import { userStoreFun } from '@/store/modules/user';
 
+const store = userStoreFun();
 const { t } = useI18n();
 ElMessage.success({ message: 'welcome', duration: 1000 });
 ElNotification({
@@ -30,6 +33,9 @@ ElNotification({
   message: 'If you encounter problems in using the template, please raise them in the issue',
   duration: 0,
 });
+const onLogout = () => {
+  store.logout();
+};
 const featureList = [
   {
     name: 'Vite3',

@@ -16,6 +16,7 @@ const i18n = createI18n({
   locale: 'en',
   messages,
 });
+console.log(import.meta.env);
 
 const app = createApp(App);
 
