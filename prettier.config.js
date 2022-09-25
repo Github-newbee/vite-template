@@ -1,7 +1,7 @@
 // https://prettier.io/docs/en/configuration.html
 module.exports = {
   // 每一行的宽度(显示的字符数)
-  printWidth: 130,
+  printWidth: 110,
 
   // tab健的空格数
   tabWidth: 2,

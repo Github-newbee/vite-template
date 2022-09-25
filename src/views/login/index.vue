@@ -17,7 +17,7 @@
               autocomplete="off"
               @keyup.enter="onSubmit"
               placeholder="输入密码"
-            ></el-input>
+            />
           </el-form-item>
           <el-form-item class="mt-10">
             <el-button class="w-full min-h-50px" type="primary" @click="onSubmit">登录</el-button>
@@ -48,6 +48,7 @@ const onSubmit = () => {
     if (valid) {
       store.login(state.form).then((res) => {
         if (res) {
+          console.log('res: ', res);
           router.push({ path: '/home' });
         }
       });

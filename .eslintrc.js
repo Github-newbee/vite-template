@@ -41,6 +41,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-irregular-whitespace': 'off', // 禁止不规则的空白
     'class-methods-use-this': 'off',
+    'no-param-reassign': 'off',
 
     // typeScript (https://typescript-eslint.io/rules)
     '@typescript-eslint/no-unused-vars': 'error', // 禁止定义未使用的变量

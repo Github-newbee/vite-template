@@ -26,7 +26,10 @@ const router: Router = createRouter({
  * @param {RouteLocationNormalizedLoaded} from  当前导航正在离开的路由
  * @return {*}
  */
-router.beforeEach((to, from, next) => {
+router.beforeEach(async (to, from, next) => {
+  if (!NProgress.isStarted()) {
+    NProgress.start();
+  }
   console.log('全局路由前置守卫：to,from\n', to, from);
   console.log('hasToken: ', hasToken());
   // 设置页面标题
@@ -34,18 +37,14 @@ router.beforeEach((to, from, next) => {
   if (hasToken()) {
     // token存在时，浏览器返回上一页时为登录页时
     if (to.path === '/login') {
-      next('/');
+      next('/home');
     }
+    // token存在时，正常进入路由
     next();
-  }
-  if (whiteList.indexOf(to.path) > -1) {
+  } else if (whiteList.indexOf(to.path) > -1) {
     next();
   } else {
     next('/login');
-  }
-
-  if (!NProgress.isStarted()) {
-    NProgress.start();
   }
 });
 

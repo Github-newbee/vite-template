@@ -15,7 +15,9 @@
           <template v-if="!item.isEnd"> | </template>
         </template>
       </p>
-      <div>{{ t('before coding') }} , {{ t('setup ide') }} <strong>VSCode</strong> + <strong>Volar</strong></div>
+      <div>
+        {{ t('before coding') }} , {{ t('setup ide') }} <strong>VSCode</strong> + <strong>Volar</strong>
+      </div>
     </div>
     <el-button class="w-full min-h-50px" type="primary" @click="onLogout">退出登录</el-button>
   </div>
@@ -27,7 +29,7 @@ import { userStoreFun } from '@/store/modules/user';
 
 const store = userStoreFun();
 const { t } = useI18n();
-ElMessage.success({ message: 'welcome', duration: 1000 });
+ElMessage.success({ message: '登录成功！欢迎您 ~ ~', duration: 1000 });
 ElNotification({
   title: 'Issue',
   message: 'If you encounter problems in using the template, please raise them in the issue',

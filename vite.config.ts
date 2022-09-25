@@ -28,7 +28,7 @@ export default defineConfig((env) => {
       proxy: {
         '/api': {
           // 本地 8000 前端代码的接口 代理到 8888 的服务端口
-          target: 'http://192.168.10.244:13000',
+          target: 'https://office-business.xironwork.com',
           changeOrigin: true, // 允许跨域
           rewrite: (path) => path.replace('/api/', '/'),
         },

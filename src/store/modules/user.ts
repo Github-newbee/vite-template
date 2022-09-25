@@ -3,16 +3,17 @@ import loginApi from '@/api/modules/login';
 import Cache from '@/store/helper/cacheFun';
 
 export const userStore = defineStore('user-store', {
-  state: () => ({}),
+  state: () => ({
+    token: Cache.getToken(),
+  }),
   actions: {
     // 用户信息
     // eslint-disable-next-line consistent-return
     async login(params: any) {
       try {
-        const { Result } = await loginApi.postVerification(params);
-        console.log('user: ', Result);
-        Cache.setToken(Result);
-        return Result;
+        const { token } = await loginApi.postVerification(params);
+        Cache.setToken(token);
+        return token;
         // eslint-disable-next-line no-empty
       } catch (e) {}
     },

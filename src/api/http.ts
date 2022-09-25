@@ -1,30 +1,38 @@
-import axios, { AxiosError, AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import axios, { AxiosError, AxiosInstance, AxiosResponse } from 'axios';
 import NProgress from 'nprogress';
 import showCodeMessage from '@/api/code';
 import { formatJsonToUrlParams, instanceObject } from '@/utils/format';
+import { userStoreFun } from '@/store/modules/user';
 
 const BASE_PREFIX = import.meta.env.VITE_API_BASEURL;
-// const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_API_URL;
 // const APP_ID = import.meta.env.VITE_GLOB_APP_ID;
 // 创建实例
 const axiosInstance: AxiosInstance = axios.create({
-  // 前缀
-  baseURL: BASE_PREFIX,
+  // 请求路径
+  baseURL: `${API_URL}${BASE_PREFIX}`,
   // 超时
   timeout: 1000 * 30,
   // 请求头
   headers: {
-    'Content-Type': 'application/json',
+    'Content-Type': 'application/json;charset=UTF-8',
   },
 });
 
 // 请求拦截器
 axiosInstance.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  (config: any) => {
     console.log('config: ', config);
     NProgress.start();
-    // 请求路径
-    // config.url = `${API_URL}${BASE_PREFIX}${config.url}`;
+    // 添加token
+    const store = userStoreFun();
+    if (store.token) {
+      config.headers.Authorization = store.token;
+    }
+    // 追加时间戳，防止GET请求缓存
+    if (config.method?.toUpperCase() === 'GET') {
+      config.params = { ...config.params, t: new Date().getTime() };
+    }
 
     // 请求AppId
     // config.headers['Xi-App-Id'] = APP_ID;
