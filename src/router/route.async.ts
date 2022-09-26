@@ -1,42 +1,14 @@
 // 需要鉴权的业务路由
 import { RouteRecordRaw } from 'vue-router';
 
-const asyncRoutes: Array<RouteRecordRaw> = [
-  {
-    path: '/',
-    name: 'Root',
-    redirect: '/home',
-    meta: {
-      title: 'Root',
-    },
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    meta: {
-      title: '',
-      icon: '',
-    },
-    component: () => import('@/views/login/index.vue'),
-  },
-  {
-    path: '/process',
-    name: 'process',
-    meta: {
-      title: 'Template configuration process',
-      icon: '',
-    },
-    component: () => import('@/views/example/MarkdownPage.vue'),
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    meta: {
-      title: 'Template configuration process',
-      icon: '',
-    },
-    component: () => import('@/views/home/index.vue'),
-  },
-];
+const asyncRoutes: Array<RouteRecordRaw> = [];
+const modules = import.meta.glob('./modules/**/*.ts', { eager: true }) as any;
+
+Object.keys(modules).forEach((key) => {
+  const mod = modules[key].default || {};
+  const modList = Array.isArray(mod) ? [...mod] : [mod];
+  asyncRoutes.push(...modList);
+  console.log('asyncRoutes: ', asyncRoutes);
+});
 
 export default asyncRoutes;

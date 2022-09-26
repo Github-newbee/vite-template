@@ -21,11 +21,13 @@
     </div>
     <el-button class="w-full min-h-50px" type="primary" @click="onLogout">退出登录</el-button>
   </div>
+  <the-footer></the-footer>
 </template>
 
 <script setup lang="ts">
 import vitecamp from '@/assets/svg/vitecamp.svg?component';
 import { userStoreFun } from '@/store/modules/user';
+import TheFooter from '@/components/TheFooter.vue';
 
 const store = userStoreFun();
 const { t } = useI18n();
