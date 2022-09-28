@@ -30,6 +30,7 @@ declare module '@vue/runtime-core' {
     EnProcess: typeof import('./components/EnProcess.md')['default']
     IAkarIconsGithubFill: typeof import('~icons/akar-icons/github-fill')['default']
     IEpAddLocation: typeof import('~icons/ep/add-location')['default']
+    IEpFold: typeof import('~icons/ep/fold')['default']
     ILaLanguage: typeof import('~icons/la/language')['default']
     'IMaterialSymbols:4gMobiledata': typeof import('~icons/material-symbols/4g-mobiledata')['default']
     IMaterialSymbols4gMobiledata: typeof import('~icons/material-symbols/4g-mobiledata')['default']

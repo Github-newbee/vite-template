@@ -1,25 +1,28 @@
 <template>
   <el-container class="layout">
     <Aside />
-    <el-container>
-      <el-header>Header</el-header>
-      <el-scrollbar>
-        <el-main>
-          <router-view v-slot="{ Component, route }">
-            <keep-alive>
-              <component :is="Component" :key="route.name"></component>
-            </keep-alive>
-          </router-view>
-        </el-main>
-      </el-scrollbar>
+    <el-container direction="vertical">
+      <!-- <el-scrollbar> -->
+      <Header />
+      <Main />
       <Footer />
+      <!-- </el-scrollbar> -->
     </el-container>
   </el-container>
 </template>
 
 <script lang="ts" setup>
-import Aside from './Aside/index.vue';
-import Footer from './Footer/index.vue';
+import Aside from './aside/index.vue';
+import Footer from './footer/index.vue';
+import Header from './header/index.vue';
+import Main from './main/index.vue';
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+// .layout {
+//   width: 100%;
+//   &-main {
+//     background: #f0f2f5;
+//   }
+// }
+</style>
