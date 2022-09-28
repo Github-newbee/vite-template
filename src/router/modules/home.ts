@@ -1,3 +1,5 @@
+import EpMonitor from '~icons/ep/monitor';
+
 const home = {
   path: '/home',
   name: 'Home',
@@ -5,7 +7,7 @@ const home = {
   redirect: '/home/dashboard',
   meta: {
     title: '业务监控',
-    icon: 'IAkarIconsGithubFill',
+    icon: EpMonitor,
   },
   children: [
     {

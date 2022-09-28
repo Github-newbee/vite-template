@@ -35,7 +35,6 @@
         <i-mdi-content-duplicate class="icon-footer" />
       </a>
     </el-tooltip>
-
     <el-tooltip content="GitHub" placement="top">
       <a
         class="icon-btn mx-2"
@@ -46,6 +45,8 @@
         <i-akar-icons-github-fill class="icon-footer" />
       </a>
     </el-tooltip>
+
+    <IMaterialSymbols4gMobiledata />
   </div>
 </template>
 
