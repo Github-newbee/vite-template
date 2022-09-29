@@ -3,7 +3,6 @@ import { createI18n } from 'vue-i18n';
 import messages from '@intlify/vite-plugin-vue-i18n/messages';
 // vue router
 import router from '@/router/index';
-// pinia
 import store from '@/store';
 import App from './App.vue';
 
@@ -20,8 +19,8 @@ const i18n = createI18n({
 console.log(import.meta.env);
 
 const app = createApp(App);
-
-app.use(router).use(store);
+app.use(store);
+app.use(router);
 
 app.use(i18n);
 

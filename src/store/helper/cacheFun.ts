@@ -10,6 +10,10 @@ class Cache {
 
   setLanguage = (val: string) => localStorage.setItem(CacheKey.LANG_KEY, val);
 
+  getAsideStatus = (): boolean => localStorage.getItem(CacheKey.ASIDE_KEY) || false;
+
+  setAsideStatus = (val: boolean) => localStorage.setItem(CacheKey.ASIDE_KEY, val);
+
   clearCache = () => localStorage.clear();
 }
 

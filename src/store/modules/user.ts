@@ -1,10 +1,10 @@
 import store from '@/store';
 import loginApi from '@/api/modules/login';
-import Cache from '@/store/helper/cacheFun';
+import cache from '@/store/helper/cacheFun';
 
 export const userStore = defineStore('user-store', {
   state: () => ({
-    token: Cache.getToken(),
+    token: cache.getToken(),
   }),
   actions: {
     // 用户信息
@@ -12,14 +12,14 @@ export const userStore = defineStore('user-store', {
     async login(params: any) {
       try {
         const { token } = await loginApi.postVerification(params);
-        Cache.setToken(token);
+        cache.setToken(token);
         return token;
         // eslint-disable-next-line no-empty
       } catch (e) {}
     },
 
     logout() {
-      Cache.clearCache();
+      cache.clearCache();
       window.location.reload();
     },
   },

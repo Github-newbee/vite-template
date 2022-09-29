@@ -1,9 +1,24 @@
 <template>
-  <div class="flex justify-center items-center h-50px bg-indigo-700">
-    <span class="text-18px font-bold text-white">后台管理系统</span>
+  <div v-if="!store.asideStatus" class="logo">
+    <span class="text-18px font-bold text-black">后台管理系统</span>
+  </div>
+  <div v-else class="logo">
+    <span>Logo</span>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { appStoreFun } from '@/store/modules/app';
 
-<style lang="scss" scoped></style>
+const store = appStoreFun();
+</script>
+
+<style lang="scss" scoped>
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--theme-logo-color);
+  height: var(--theme-header-height);
+}
+</style>

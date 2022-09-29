@@ -1,6 +1,14 @@
 <template>
-  <el-scrollbar class="flex-1" max-height="400px">
-    <el-menu :default-active="defaultActive" router>
+  <el-scrollbar class="flex-1">
+    <el-menu
+      :collapse="store.asideStatus"
+      class="el-menu-container"
+      :unique-opened="true"
+      :default-active="defaultActive"
+      router
+      mode="vertical"
+      :collapse-transition="false"
+    >
       <MenuItem :menu="menu" v-for="menu in asyncRoutes" :key="menu.path"></MenuItem>
     </el-menu>
   </el-scrollbar>
@@ -9,7 +17,9 @@
 <script lang="ts" setup>
 import asyncRoutes from '@/router/route.async';
 import MenuItem from './MenuItem.vue';
+import { appStoreFun } from '@/store/modules/app';
 
+const store = appStoreFun();
 const route = useRoute();
 const defaultActive = computed(() => {
   const { path } = route;
@@ -18,4 +28,9 @@ const defaultActive = computed(() => {
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+::v-deep(.el-menu-container:not(.el-menu--collapse)) {
+  width: 200px;
+  height: calc(100vh);
+}
+</style>

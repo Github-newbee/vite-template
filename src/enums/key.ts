@@ -3,4 +3,5 @@ export enum CacheKey {
   TOKEN_KEY = 'token',
   THEME_KEY = 'theme',
   LANG_KEY = 'lang',
+  ASIDE_KEY = 'aside',
 }

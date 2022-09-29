@@ -1,19 +1,21 @@
 <template>
-  <div v-if="!menu.hidden">
-    <el-sub-menu v-if="menu.children?.length > 0" :key="menu.path" :index="menu.path">
-      <template #title>
+  <el-sub-menu v-if="menu.children?.length > 0" :key="menu.path" :index="menu.path">
+    <template #title>
+      <el-icon>
         <component :is="menu.meta.icon" />
-        <p class="ml-2">{{ menu.meta.title }}</p>
-      </template>
-      <menu-item v-for="sub in menu.children" :key="sub.path" :menu="sub" />
-    </el-sub-menu>
-    <el-menu-item v-else :key="menu.name" :index="menu.path">
-      <template #title>
+      </el-icon>
+      <span>{{ menu.meta.title }}</span>
+    </template>
+    <menu-item v-for="sub in menu.children" :key="sub.path" :menu="sub" />
+  </el-sub-menu>
+  <el-menu-item v-else :key="menu.name" :index="menu.path">
+    <template #title>
+      <el-icon v-if="menu.meta.icon">
         <component :is="menu.meta.icon" />
-        {{ menu.meta.title }}
-      </template>
-    </el-menu-item>
-  </div>
+      </el-icon>
+      <span>{{ menu.meta.title }}</span>
+    </template>
+  </el-menu-item>
 </template>
 
 <script lang="ts" setup>
