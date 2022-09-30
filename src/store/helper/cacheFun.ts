@@ -6,6 +6,10 @@ class Cache {
 
   setToken = (val: string) => localStorage.setItem(CacheKey.TOKEN_KEY, val);
 
+  getUserInfo = (): any => localStorage.getItem(CacheKey.USERINFO_KEY) || '';
+
+  setUserInfo = (val: any) => localStorage.setItem(CacheKey.USERINFO_KEY, val);
+
   getLanguage = (): string => localStorage.getItem(CacheKey.LANG_KEY) || 'zh';
 
   setLanguage = (val: string) => localStorage.setItem(CacheKey.LANG_KEY, val);
