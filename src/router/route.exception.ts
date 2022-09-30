@@ -18,11 +18,11 @@ const exceptionRoutes: Array<RouteRecordRaw> = [
     },
     component: () => import('@/views/exception/404.vue'),
   },
-  {
-    path: '/:pathMatch(.*)',
-    meta: {},
-    redirect: '/404',
-  },
+  // {
+  //   path: '/:pathMatch(.*)',
+  //   meta: {},
+  //   redirect: '/404',
+  // },
 ];
 
 export default exceptionRoutes;

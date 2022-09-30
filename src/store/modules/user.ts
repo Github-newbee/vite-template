@@ -5,7 +5,7 @@ import cache from '@/store/helper/cacheFun';
 export const userStore = defineStore('user-store', {
   state: () => ({
     token: cache.getToken(),
-    user: cache.getUserInfo(),
+    userInfo: cache.getUserInfo(),
   }),
   actions: {
     // 用户信息

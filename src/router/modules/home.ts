@@ -18,14 +18,6 @@ const home = {
         title: '业务监控',
       },
     },
-    {
-      path: 'systemSetting',
-      name: 'SystemSetting',
-      component: () => import('@/views/system/index.vue'),
-      meta: {
-        title: '系统配置',
-      },
-    },
   ],
 };
 

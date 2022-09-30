@@ -5,11 +5,11 @@
       class="el-menu-container"
       :unique-opened="true"
       :default-active="defaultActive"
-      router
-      mode="vertical"
       :collapse-transition="false"
+      mode="vertical"
+      :router="true"
     >
-      <MenuItem :menu="menu" v-for="menu in asyncRoutes" :key="menu.path"></MenuItem>
+      <MenuItem :menu="menu" v-for="menu in asyncRoutes" :key="menu.path" />
     </el-menu>
   </el-scrollbar>
 </template>
@@ -19,13 +19,10 @@ import asyncRoutes from '@/router/route.async';
 import MenuItem from './MenuItem.vue';
 import { appStoreFun } from '@/store/modules/app';
 
+console.log('asyncRoutes: ', asyncRoutes);
 const store = appStoreFun();
 const route = useRoute();
-const defaultActive = computed(() => {
-  const { path } = route;
-  console.log('path: ', path);
-  return path;
-});
+const defaultActive = computed((): string => route.path);
 </script>
 
 <style lang="scss" scoped>

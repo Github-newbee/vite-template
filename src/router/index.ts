@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, Router, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
 import NProgress from 'nprogress';
 import exceptionRoutes from '@/router/route.exception';
 import asyncRoutes from '@/router/route.async';
@@ -15,8 +15,8 @@ const routes: Array<RouteRecordRaw> = [
 ];
 const whiteList = ['/login'];
 const router: Router = createRouter({
-  // 新的vue-router4 使用 history路由模式 和 base前缀
-  history: createWebHistory(import.meta.env.VITE_BASE),
+  // 路由历史记录模式Hash模式，会带有#
+  history: createWebHashHistory(import.meta.env.VITE_BASE),
   routes,
 });
 

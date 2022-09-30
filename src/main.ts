@@ -16,12 +16,11 @@ const i18n = createI18n({
   locale: 'en',
   messages,
 });
-console.log(import.meta.env);
 
 const app = createApp(App);
-app.use(store);
-app.use(router);
 
+app.use(router);
+app.use(store);
 app.use(i18n);
 
 app.mount('#app');

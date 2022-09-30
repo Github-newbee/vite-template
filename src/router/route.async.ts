@@ -8,7 +8,6 @@ Object.keys(modules).forEach((key) => {
   const mod = modules[key].default || {};
   const modList = Array.isArray(mod) ? [...mod] : [mod];
   asyncRoutes.push(...modList);
-  console.log('asyncRoutes: ', asyncRoutes);
 });
 
 export default asyncRoutes;

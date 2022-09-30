@@ -1,10 +1,10 @@
 <template>
   <el-main class="layout-main">
-    <router-view v-slot="{ Component, route }">
+    <router-view v-slot="{ Component }">
       <keep-alive>
         <suspense>
           <template #default>
-            <component :is="Component" :key="route.meta.usePathKey ? route.path : undefined" />
+            <component :is="Component" :key="key" />
           </template>
           <template #fallback> Loading... </template>
         </suspense>
@@ -13,7 +13,10 @@
   </el-main>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+const route = useRoute();
+const key = computed(() => route.path);
+</script>
 
 <style lang="scss" scoped>
 .layout-main {
