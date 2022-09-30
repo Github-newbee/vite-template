@@ -6,7 +6,7 @@ class Cache {
 
   setToken = (val: string) => localStorage.setItem(CacheKey.TOKEN_KEY, val);
 
-  getUserInfo = (): any => localStorage.getItem(CacheKey.USERINFO_KEY) || '';
+  getUserInfo = (): any => localStorage.getItem(CacheKey.USERINFO_KEY);
 
   setUserInfo = (val: any) => localStorage.setItem(CacheKey.USERINFO_KEY, val);
 

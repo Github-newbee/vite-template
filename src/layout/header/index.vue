@@ -6,7 +6,7 @@
     <div>
       <el-dropdown trigger="click">
         <div class="header-logo flex items-center">
-          <span class="mr-3 text-18px">{{ userStore?.userInfo.username }}</span>
+          <span class="mr-3 text-18px">{{ username }}</span>
           <IEpArrowDownBold />
         </div>
         <template #dropdown>
@@ -25,7 +25,8 @@ import { userStoreFun } from '@/store/modules/user';
 
 const store = appStoreFun();
 const userStore = userStoreFun();
-console.log('userStore: ', userStore);
+const username = computed(() => userStore.userInfo?.username);
+console.log('username: ', username.value);
 const foldMenu = () => {
   store.setAsideStatus();
 };

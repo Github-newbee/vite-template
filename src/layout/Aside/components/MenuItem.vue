@@ -1,5 +1,5 @@
 <template>
-  <el-sub-menu v-if="menu.children?.length > 0" :key="menu.path" :index="menu.path">
+  <el-sub-menu v-if="menu.children && menu.children.length > 1" :key="menu.path" :index="menu.path">
     <template #title>
       <el-icon>
         <component :is="menu.meta.icon" />

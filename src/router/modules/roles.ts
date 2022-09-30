@@ -11,11 +11,12 @@ const roles = {
   },
   children: [
     {
-      path: 'rolesManage',
+      path: '/roles/rolesManage',
       name: 'RolesManage',
       component: () => import('@/views/system/roles/index.vue'),
       meta: {
         title: '角色管理',
+        icon: EpMonitor,
       },
     },
   ],

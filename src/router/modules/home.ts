@@ -11,7 +11,7 @@ const home = {
   },
   children: [
     {
-      path: 'dashboard',
+      path: '/home/dashboard',
       name: 'Dashboard',
       component: () => import('@/views/home/index.vue'),
       meta: {

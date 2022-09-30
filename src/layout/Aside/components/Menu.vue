@@ -17,9 +17,12 @@
 <script lang="ts" setup>
 import asyncRoutes from '@/router/route.async';
 import MenuItem from './MenuItem.vue';
+import handleRouter from '@/utils/utils';
 import { appStoreFun } from '@/store/modules/app';
 
 console.log('asyncRoutes: ', asyncRoutes);
+handleRouter(asyncRoutes);
+console.log('handleRouter(asyncRoutes): ', handleRouter(asyncRoutes));
 const store = appStoreFun();
 const route = useRoute();
 const defaultActive = computed((): string => route.path);

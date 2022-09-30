@@ -48,7 +48,6 @@ const onSubmit = () => {
     if (valid) {
       store.login(state.form).then((res) => {
         if (res) {
-          console.log('res: ', res);
           router.push({ path: '/home' });
         }
       });

@@ -13,11 +13,19 @@ export const userStore = defineStore('user-store', {
     async login(params: any) {
       try {
         const { token, user } = await loginApi.postVerification(params);
-        cache.setToken(token);
-        cache.setUserInfo(user);
+        this.setToken(token);
+        this.setUser(user);
         return token;
         // eslint-disable-next-line no-empty
       } catch (e) {}
+    },
+    setToken(token: string) {
+      this.token = token;
+      cache.setToken(token);
+    },
+    setUser(userInfo: any) {
+      this.userInfo = userInfo;
+      cache.setUserInfo(userInfo);
     },
 
     logout() {
