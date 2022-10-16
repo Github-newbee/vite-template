@@ -1,55 +1,17 @@
 .login {
-  min-height: 100%;
+  height: 100%;
   overflow: hidden;
-  position: relative;
   display: flex;
-  min-width: 680px;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background: url(@/assets/images/login/bg_login.png) no-repeat;
-
-  &-title {
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    margin: 20px 0 30px;
-    color: #1676ff;
-
-    &-text {
-      position: relative;
-    }
-  }
+ // background: url(@/assets/images/login/bg_login.png) no-repeat;
   &-container {
-    position: relative;
-    height: 550px;
-    width: 1000px;
     overflow: hidden;
     background: #ffffff;
-    border-radius: 36px;
-    box-shadow: 0 4px 30px 9px #3173ff;
-    display: flex;
-
-    .login-left {
-      width: 50%;
-      background: url(@/assets/images/login/login_form.png) no-repeat;
-      background-size: cover;
-    }
-    .login-content {
-      width: 50%;
-      padding: 10% 10%;
-
-      .login-label {
-        color: #515761;
-        font-size: 22px;
-        font-weight: 500;
-      }
-
-      .btn-item {
-        margin-top: 50px;
-        margin-bottom: 0;
-      }
-    }
-
+    width: 400px;
+    border-radius: 15px;
+    padding: 10px 20px;
     :deep(.input-item) {
       margin-bottom: 25px;
 
@@ -63,11 +25,6 @@
 
       .el-input__inner {
         height: 40px;
-        // border-top: 0;
-        // border-left: 0;
-        // border-right: 0;
-        // border-radius: 0;
-        // padding: 0;
       }
     }
   }

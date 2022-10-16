@@ -6,13 +6,14 @@
       </el-icon>
       <span>{{ menu.meta.title }}</span>
     </template>
+
     <menu-item v-for="sub in menu.children" :key="sub.path" :menu="sub" />
   </el-sub-menu>
   <el-menu-item v-else :key="menu.name" :index="menu.path">
+    <el-icon v-if="menu.meta.icon">
+      <component :is="menu.meta.icon" />
+    </el-icon>
     <template #title>
-      <el-icon v-if="menu.meta.icon">
-        <component :is="menu.meta.icon" />
-      </el-icon>
       <span>{{ menu.meta.title }}</span>
     </template>
   </el-menu-item>
