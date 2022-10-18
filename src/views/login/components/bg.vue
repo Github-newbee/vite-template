@@ -3,10 +3,10 @@
 </template>
 <script lang="ts" setup>
 const setupToDom = () => {
-  const cvs: any = document.getElementById('bg');
-  const ctx = cvs.getContext('2d');
   const width = window.innerWidth;
   const height = window.innerHeight;
+  const cvs: any = document.getElementById('bg');
+  const ctx = cvs.getContext('2d');
   // 设置cvs 宽高为界面宽高
   cvs.width = width;
   cvs.height = height;
@@ -58,11 +58,14 @@ const setupToDom = () => {
     }
   }
   draw();
-  setInterval(draw, 40);
+  setInterval(draw, 80);
 };
 
 onMounted(() => {
   setupToDom();
+  window.onresize = () => {
+    setupToDom();
+  };
 });
 </script>
 <style>

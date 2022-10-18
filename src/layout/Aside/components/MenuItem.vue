@@ -20,13 +20,12 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   menu: {
     type: Object,
     default: () => {},
   },
 });
-console.log('props:', props.menu);
 </script>
 
 <style lang="scss" scoped></style>

@@ -1,14 +1,16 @@
-import EpSetting from '~icons/ep/setting';
+import UilCog from '~icons/uil/cog';
+import { AppRouteModule } from '../helper/types';
 
-const system = {
+const system: AppRouteModule = {
   path: '/system',
   name: 'System',
   // hidden: true,
   component: () => import('@/layout/index.vue'),
   redirect: '/system/systemSetting',
   meta: {
+    sort: 40,
     title: '系统设置',
-    icon: EpSetting,
+    icon: UilCog,
   },
   children: [
     {

@@ -1,13 +1,15 @@
-import EpMonitor from '~icons/ep/monitor';
+import UilDesktop from '~icons/uil/desktop';
+import { AppRouteModule } from '../helper/types';
 
-const home = {
+const home: AppRouteModule = {
   path: '/home',
   name: 'Home',
   component: () => import('@/layout/index.vue'),
   redirect: '/home/dashboard',
   meta: {
+    sort: 2,
     title: '业务监控',
-    icon: EpMonitor,
+    icon: UilDesktop,
   },
   children: [
     {

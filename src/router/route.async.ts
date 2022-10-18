@@ -1,7 +1,7 @@
 // 需要鉴权的业务路由
-import { RouteRecordRaw } from 'vue-router';
+import { AppRouteModule } from './helper/types';
 
-const asyncRoutes: Array<RouteRecordRaw> = [];
+const asyncRoutes: Array<AppRouteModule> = [];
 const modules = import.meta.glob('./modules/**/*.ts', { eager: true }) as any;
 
 Object.keys(modules).forEach((key) => {

@@ -3,7 +3,7 @@
   <div class="login">
     <div class="login-container">
       <div class="text-28px text-center mt-10 mb-10 text-black">
-        <span style="color: black">傻瓜后台管理系统</span>
+        <span style="color: black">{{ title }}</span>
       </div>
       <el-form :model="state.form" ref="formRef" :rules="rules" label-position="top">
         <el-form-item class="input-item" prop="username">
@@ -29,6 +29,7 @@
 import { userStoreFun } from '@/store/modules/user';
 import bg from './components/bg.vue';
 
+const title = import.meta.env.VITE_APP_TITLE;
 const router = useRouter();
 const store = userStoreFun();
 const formRef = ref();

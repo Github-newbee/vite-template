@@ -17,15 +17,15 @@
 <script lang="ts" setup>
 import asyncRoutes from '@/router/route.async';
 import MenuItem from './MenuItem.vue';
-import handleRouter from '@/utils/utils';
+// import handleRouter from '@/utils/utils';
 import { appStoreFun } from '@/store/modules/app';
+import { sortRouter } from '@/router/helper';
+// 路由根据sort字段排序
 
-console.log('asyncRoutes: ', asyncRoutes);
-handleRouter(asyncRoutes);
+console.log('res: ', sortRouter(asyncRoutes));
 // console.log('handleRouter(asyncRoutes): ', handleRouter(asyncRoutes));
 const store = appStoreFun();
-const route = useRoute();
-const defaultActive = computed((): string => route.path);
+const defaultActive = asyncRoutes[0].path;
 </script>
 
 <style lang="scss" scoped>

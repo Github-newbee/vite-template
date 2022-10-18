@@ -13,6 +13,7 @@ const routes: Array<RouteRecordRaw> = [
   // 异常页必须放在路由匹配规则的最后
   ...exceptionRoutes,
 ];
+// 白名单路由
 const whiteList = ['/login'];
 const router: Router = createRouter({
   // 路由历史记录模式Hash模式，会带有#

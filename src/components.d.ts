@@ -37,7 +37,6 @@ declare module '@vue/runtime-core' {
     IHeroiconsSolidMenuAlt1: typeof import('~icons/heroicons-solid/menu-alt1')['default']
     ILaLanguage: typeof import('~icons/la/language')['default']
     ILucideAlignJustify: typeof import('~icons/lucide/align-justify')['default']
-    'IMaterialSymbols:4gMobiledata': typeof import('~icons/material-symbols/4g-mobiledata')['default']
     IMaterialSymbols4gMobiledata: typeof import('~icons/material-symbols/4g-mobiledata')['default']
     IMdiContentDuplicate: typeof import('~icons/mdi/content-duplicate')['default']
     IMdiHomeSearchOutline: typeof import('~icons/mdi/home-search-outline')['default']

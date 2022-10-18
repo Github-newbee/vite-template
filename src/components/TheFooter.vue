@@ -45,8 +45,6 @@
         <i-akar-icons-github-fill class="icon-footer" />
       </a>
     </el-tooltip>
-
-    <IMaterialSymbols4gMobiledata />
   </div>
 </template>
 
