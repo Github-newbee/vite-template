@@ -13,6 +13,7 @@ specifiers:
   '@vitejs/plugin-vue': ^3.0.1
   '@vitejs/plugin-vue-jsx': 2.0.0
   '@vueuse/core': ^8.9.2
+  '@zxcvbn-ts/core': ^2.0.5
   axios: ^0.25.0
   element-plus: ^2.0.1
   eslint: ^8.19.0
@@ -48,6 +49,7 @@ specifiers:
 
 dependencies:
   '@vueuse/core': 8.9.4_vue@3.2.39
+  '@zxcvbn-ts/core': registry.npmmirror.com/@zxcvbn-ts/core/2.0.5
   axios: 0.25.0
   element-plus: 2.2.17_vue@3.2.39
   nprogress: 0.2.0
@@ -145,7 +147,7 @@ packages:
       debug: registry.npmmirror.com/debug/4.3.4
       gensync: 1.0.0-beta.2
       json5: 2.2.1
-      semver: 6.3.0
+      semver: registry.npmmirror.com/semver/6.3.0
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -4385,6 +4387,12 @@ packages:
     resolution: {integrity: sha512-W9mfWLHmJhkfAmV+7gDjcHeAWALQtgGT3JErxULl0oz6R6+3ug91I7IErs93eCFhPCZPHBs4QJS7YWEV7A3sxw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@vue/shared/-/shared-3.2.41.tgz}
     name: '@vue/shared'
     version: 3.2.41
+
+  registry.npmmirror.com/@zxcvbn-ts/core/2.0.5:
+    resolution: {integrity: sha512-2bHIFR5jsAF2J/dU/mPLgAO5YPNkffVo5tQdnz7rw+32bz9+Y+7/7j9wygCzHpXjxuKgTG+Cd6OX0fxw1sSdTA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@zxcvbn-ts/core/-/core-2.0.5.tgz}
+    name: '@zxcvbn-ts/core'
+    version: 2.0.5
+    dev: false
 
   registry.npmmirror.com/acorn-jsx/5.3.2_acorn@7.4.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/acorn-jsx/-/acorn-jsx-5.3.2.tgz}

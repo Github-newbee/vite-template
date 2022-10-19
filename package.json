@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^8.9.2",
+    "@zxcvbn-ts/core": "^2.0.5",
     "axios": "^0.25.0",
     "element-plus": "^2.0.1",
     "nprogress": "^0.2.0",

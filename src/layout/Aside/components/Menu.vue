@@ -4,7 +4,7 @@
       :collapse="store.asideStatus"
       class="el-menu-container"
       :unique-opened="true"
-      :default-active="defaultActive"
+      :default-active="activeMenu"
       :collapse-transition="false"
       mode="vertical"
       :router="true"
@@ -17,15 +17,20 @@
 <script lang="ts" setup>
 import asyncRoutes from '@/router/route.async';
 import MenuItem from './MenuItem.vue';
-// import handleRouter from '@/utils/utils';
 import { appStoreFun } from '@/store/modules/app';
 import { sortRouter } from '@/router/helper';
 // 路由根据sort字段排序
 
 console.log('res: ', sortRouter(asyncRoutes));
-// console.log('handleRouter(asyncRoutes): ', handleRouter(asyncRoutes));
 const store = appStoreFun();
-const defaultActive = asyncRoutes[0].path;
+const activeMenu = computed(() => {
+  const { meta, path } = useRoute();
+  console.log('path: ', path);
+  if (meta.activeMenu) {
+    return meta.activeMenu;
+  }
+  return path;
+});
 </script>
 
 <style lang="scss" scoped>

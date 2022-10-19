@@ -44,6 +44,7 @@ declare module '@vue/runtime-core' {
     IPhSunHorizonBold: typeof import('~icons/ph/sun-horizon-bold')['default']
     IPrimeAlignLeft: typeof import('~icons/prime/align-left')['default']
     IRiArticleLine: typeof import('~icons/ri/article-line')['default']
+    PwdStrength: typeof import('./components/PwdStrength/PwdStrength.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
