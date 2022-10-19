@@ -26,7 +26,6 @@ import { userStoreFun } from '@/store/modules/user';
 const store = appStoreFun();
 const userStore = userStoreFun();
 const username = computed(() => userStore.userInfo?.username);
-console.log('username: ', username.value);
 const foldMenu = () => {
   store.setAsideStatus();
 };

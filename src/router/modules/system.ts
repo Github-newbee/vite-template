@@ -8,7 +8,7 @@ const system: AppRouteModule = {
   component: () => import('@/layout/index.vue'),
   redirect: '/system/systemSetting',
   meta: {
-    sort: 40,
+    sort: 100,
     title: '系统设置',
     icon: UilCog,
   },
@@ -22,12 +22,49 @@ const system: AppRouteModule = {
       },
     },
     {
-      path: '/system/rolesSetting',
-      name: 'RolesSetting',
-      component: () => import('@/views/system/roles/index.vue'),
+      path: '/system/MenuSetting',
+      name: 'MenuSetting',
+      redirect: '/system/systemSetting/charts',
+      component: () => import('@/App.vue'),
       meta: {
-        title: '角色配置',
+        title: '多级菜单',
       },
+      children: [
+        {
+          path: '/system/MenuSetting/menu1',
+          name: 'SystemMenu1',
+          component: () => import('@/views/menu/menu1/index.vue'),
+          meta: {
+            title: '菜单1',
+          },
+        },
+        {
+          path: '/system/MenuSetting/menu2',
+          name: 'SystemMenu2',
+          component: () => import('@/App.vue'),
+          meta: {
+            title: '菜单2',
+          },
+          children: [
+            {
+              path: '/system/MenuSetting/menu2-1',
+              name: 'SystemMenu2-1',
+              component: () => import('@/views/menu/menu2-1/index.vue'),
+              meta: {
+                title: '菜单2-1',
+              },
+            },
+            {
+              path: '/system/MenuSetting/menu2-2',
+              name: 'SystemMenu2-2',
+              component: () => import('@/views/menu/menu2-2/index.vue'),
+              meta: {
+                title: '菜单2-1',
+              },
+            },
+          ],
+        },
+      ],
     },
   ],
 };

@@ -1,7 +1,7 @@
 // 跟鉴权无关的特殊路由
-import { RouteRecordRaw } from 'vue-router';
+import { AppRouteModule } from './helper/types';
 
-const exceptionRoutes: Array<RouteRecordRaw> = [
+const exceptionRoutes: Array<AppRouteModule> = [
   {
     path: '/401',
     name: '401',

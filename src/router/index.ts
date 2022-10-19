@@ -1,11 +1,11 @@
-import { createRouter, createWebHashHistory, Router, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import NProgress from 'nprogress';
 import exceptionRoutes from '@/router/route.exception';
 import asyncRoutes from '@/router/route.async';
 import commonRoutes from '@/router/route.common';
 import { hasToken } from './helper';
 
-const routes: Array<RouteRecordRaw> = [
+const routes: any = [
   // 无鉴权的业务路由 ex:登录
   ...commonRoutes,
   // 带鉴权的业务路由
@@ -15,7 +15,7 @@ const routes: Array<RouteRecordRaw> = [
 ];
 // 白名单路由
 const whiteList = ['/login'];
-const router: Router = createRouter({
+const router = createRouter({
   // 路由历史记录模式Hash模式，会带有#
   history: createWebHashHistory(import.meta.env.VITE_BASE),
   routes,

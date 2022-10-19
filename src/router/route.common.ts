@@ -1,7 +1,7 @@
 // 不需要鉴权的业务路由
-import { RouteRecordRaw } from 'vue-router';
+import { AppRouteModule } from './helper/types';
 
-const commonRoutes: Array<RouteRecordRaw> = [
+const commonRoutes: Array<AppRouteModule> = [
   {
     path: '/',
     name: 'Root',
