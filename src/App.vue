@@ -6,10 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import { messages } from '@/i18n';
+import { appStoreFun } from '@/store/modules/app';
 
-const appTitle = import.meta.env.VITE_API_BASEURL;
-
-const locale = zhCn;
-useTitle(appTitle);
+const store = appStoreFun();
+const locale = computed(() => messages[store.language].el);
 </script>

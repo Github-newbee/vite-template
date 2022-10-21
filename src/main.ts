@@ -1,6 +1,5 @@
 // i18n
-import { createI18n } from 'vue-i18n';
-import messages from '@intlify/vite-plugin-vue-i18n/messages';
+import { i18n } from './i18n';
 // vue router
 import router from '@/router/index';
 import store from '@/store';
@@ -11,11 +10,6 @@ import 'virtual:windi.css';
 import 'virtual:windi-devtools';
 import '@/assets/styles/index.scss';
 import '@/assets/styles/theme/index.scss';
-
-const i18n = createI18n({
-  locale: 'en',
-  messages,
-});
 
 const app = createApp(App);
 app.use(store);

@@ -44,10 +44,10 @@ declare module '@vue/runtime-core' {
     IPhSunHorizonBold: typeof import('~icons/ph/sun-horizon-bold')['default']
     IPrimeAlignLeft: typeof import('~icons/prime/align-left')['default']
     IRiArticleLine: typeof import('~icons/ri/article-line')['default']
+    IUilEnglishToChinese: typeof import('~icons/uil/english-to-chinese')['default']
     PwdStrength: typeof import('./components/PwdStrength/PwdStrength.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SvgIcon: typeof import('./components/SvgIcon/index.vue')['default']
     TheFooter: typeof import('./components/TheFooter.vue')['default']
     ZhProcess: typeof import('./components/ZhProcess.md')['default']
   }

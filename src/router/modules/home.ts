@@ -8,7 +8,7 @@ const home: AppRouteModule = {
   redirect: '/home/dashboard',
   meta: {
     sort: 2,
-    title: '业务监控',
+    title: 'menu.home',
     icon: UilDesktop,
   },
   children: [

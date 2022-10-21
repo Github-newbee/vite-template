@@ -32,7 +32,6 @@ const checkPwdStrengeth = computed(() => {
 
 const handleChange = (val: string) => {
   pwdStrengthValue.value = val;
-  console.log('checkPwdStrengeth: ', checkPwdStrengeth.value);
 };
 // 立即执行一个函数，同时响应式追踪其依赖
 watchEffect(() => {

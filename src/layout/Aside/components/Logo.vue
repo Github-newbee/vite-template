@@ -1,6 +1,6 @@
 <template>
   <div v-if="!store.asideStatus" class="logo">
-    <span class="text-18px font-bold text-black">后台管理系统</span>
+    <span class="text-18px font-bold text-black">{{ $t('app.title') }}</span>
   </div>
   <div v-else class="logo">
     <span>Logo</span>
