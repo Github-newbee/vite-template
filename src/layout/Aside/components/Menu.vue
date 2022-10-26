@@ -25,7 +25,6 @@ console.log('res: ', sortRouter(asyncRoutes));
 const store = appStoreFun();
 const activeMenu = computed(() => {
   const { meta, path } = useRoute();
-  console.log('path: ', path);
   if (meta.activeMenu) {
     return meta.activeMenu;
   }

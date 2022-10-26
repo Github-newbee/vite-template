@@ -3,19 +3,23 @@ import cache from '@/store/helper/cacheFun';
 
 export const tabsStore = defineStore('tabs-store', {
   state: () => ({
-    tabsList: [{ title: '首页', path: '/home/dashboard' }],
+    tabsList: [{ title: '首页', path: '/home/dashboard', close: false }],
   }),
   actions: {
-    async addTabsToList(tab: any) {
+    addTabsToList(tab: any) {
       const tabItem = {
         title: tab.title,
         path: tab.path,
+        close: true,
       };
       // 判断当前路由是否已缓存
       if (this.tabsList.every((item) => item.path !== tab.path)) {
         this.tabsList.push(tabItem);
       }
-      cache.setTabsList(this.tabsList);
+    },
+    setTabsListToCache(list: any) {
+      this.tabsList = list;
+      cache.setTabsList(list);
     },
   },
 });

@@ -18,9 +18,9 @@ class Cache {
 
   setAsideStatus = (val: boolean) => localStorage.setItem(CacheKey.ASIDE_KEY, val);
 
-  getTabsList = (): [] => localStorage.getItem(CacheKey.TABS_KEY) || [];
+  getTabsList = (): any => localStorage.getItem(CacheKey.TABS_KEY) || '';
 
-  setTabsList = (val: any[]) => localStorage.setItem(CacheKey.TABS_KEY, val);
+  setTabsList = (val: any) => localStorage.setItem(CacheKey.TABS_KEY, val);
 
   clearCache = () => localStorage.clear();
 }
