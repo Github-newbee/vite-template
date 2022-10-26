@@ -8,7 +8,7 @@ const charts: AppRouteModule = {
   redirect: '/charts/echarts',
   meta: {
     sort: 20,
-    title: '图表',
+    title: 'menu.charts',
     icon: UilChart,
   },
   children: [
@@ -17,7 +17,7 @@ const charts: AppRouteModule = {
       name: 'ECharts',
       component: () => import('@/views/charts/index.vue'),
       meta: {
-        title: '图表',
+        title: 'menu.charts',
       },
     },
   ],

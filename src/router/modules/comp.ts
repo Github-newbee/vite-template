@@ -1,4 +1,4 @@
-import UilChart from '~icons/uil/chart';
+import UilCell from '~icons/uil/cell';
 import { AppRouteModule } from '../helper/types';
 
 const comp: AppRouteModule = {
@@ -8,8 +8,8 @@ const comp: AppRouteModule = {
   redirect: '/comp/pwdStrength',
   meta: {
     sort: 20,
-    title: '组件',
-    icon: UilChart,
+    title: 'menu.comps',
+    icon: UilCell,
   },
   children: [
     {
@@ -18,6 +18,14 @@ const comp: AppRouteModule = {
       component: () => import('@/views/comp/pwd/index.vue'),
       meta: {
         title: '密码强度',
+      },
+    },
+    {
+      path: '/comp/tableComp',
+      name: 'TabelComp',
+      component: () => import('@/views/comp/table/index.vue'),
+      meta: {
+        title: '表格组件',
       },
     },
   ],

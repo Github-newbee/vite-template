@@ -17,7 +17,7 @@ const home: AppRouteModule = {
       name: 'Dashboard',
       component: () => import('@/views/home/index.vue'),
       meta: {
-        title: '业务监控',
+        title: 'menu.home',
       },
     },
   ],

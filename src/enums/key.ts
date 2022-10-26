@@ -5,4 +5,5 @@ export enum CacheKey {
   LANG_KEY = 'lang',
   ASIDE_KEY = 'aside',
   USERINFO_KEY = 'userInfo',
+  TABS_KEY = 'tabs',
 }

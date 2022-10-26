@@ -10,5 +10,7 @@ export default {
   },
   menu: {
     home: 'dashboard',
+    charts: 'charts',
+    comps: 'components',
   },
 };

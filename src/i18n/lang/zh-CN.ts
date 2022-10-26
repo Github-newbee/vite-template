@@ -10,5 +10,7 @@ export default {
   },
   menu: {
     home: '业务监控',
+    charts: '图表',
+    comps: '组件',
   },
 };

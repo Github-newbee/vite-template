@@ -1,4 +1,5 @@
 <template>
+  <Tabs></Tabs>
   <el-main class="layout-main">
     <router-view v-slot="{ Component }">
       <keep-alive>
@@ -14,6 +15,8 @@
 </template>
 
 <script lang="ts" setup>
+import Tabs from '../tabs/index.vue';
+
 const route = useRoute();
 const key = computed(() => route.path);
 </script>

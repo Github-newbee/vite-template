@@ -1,6 +1,8 @@
 <template>
-  <div>密码强度:{{ txt }}</div>
-  <PwdStrength @strength="getStrength"></PwdStrength>
+  <div class="bg-white p-80">
+    <div>密码强度:{{ txt }}</div>
+    <PwdStrength @strength="getStrength"></PwdStrength>
+  </div>
 </template>
 
 <script lang="ts" setup>
