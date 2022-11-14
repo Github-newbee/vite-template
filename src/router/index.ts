@@ -31,8 +31,7 @@ router.beforeEach(async (to, from, next) => {
   if (!NProgress.isStarted()) {
     NProgress.start();
   }
-  console.log('全局路由前置守卫：to,from\n', to, from);
-  console.log('hasToken: ', hasToken());
+  // console.log('全局路由前置守卫：to,from\n', to, from);
   // 设置页面标题
   document.title = (to.meta.title as string) || import.meta.env.VITE_APP_TITLE;
   if (hasToken()) {

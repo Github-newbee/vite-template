@@ -8,7 +8,7 @@
       @tab-remove="removeTab"
     >
       <el-tab-pane
-        v-for="item in tabsStore.tabsList"
+        v-for="item in tabList"
         :key="item.path"
         :label="$t(item.title)"
         :name="item.path"
@@ -23,19 +23,19 @@
 import { tabsStoreFun } from '@/store/modules/tabs';
 
 const tabsStore = tabsStoreFun();
-const tabsValue = ref('/home/dashboard');
 const router = useRouter();
 const route = useRoute();
 const tabActive = computed(() => {
   return route.path;
 });
+const tabList = computed(() => tabsStore.getTabList() as any);
 // 监听路由
 watch(
   () => route.path,
-  () => {
+  (val) => {
     const params = {
       title: route.meta.title as string,
-      path: route.path,
+      path: val,
       close: true,
     };
     tabsStore.addTabsToList(params);
@@ -45,11 +45,13 @@ watch(
 
 // 点击tab跳转路由
 const handleClick = (pane: any) => {
-  console.log('pane: ', pane);
   router.push({ path: pane.props.name });
 };
-console.log('tabsValue.value: ', tabsValue.value);
-console.log('tabsStore: ', tabsStore);
+// 删除tabs
+const removeTab = (tab: any) => {
+  tabsStore.removeTab(tab);
+  router.push(unref(tabList).slice(-1)[0].path);
+};
 </script>
 
 <style lang="scss" scoped>

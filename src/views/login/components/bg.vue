@@ -2,6 +2,9 @@
   <canvas id="bg"></canvas>
 </template>
 <script lang="ts" setup>
+/**
+ * canvas 背景动画
+ */
 const setupToDom = () => {
   const width = window.innerWidth;
   const height = window.innerHeight;

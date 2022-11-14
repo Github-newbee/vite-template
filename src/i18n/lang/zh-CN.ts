@@ -13,4 +13,7 @@ export default {
     charts: '图表',
     comps: '组件',
   },
+  table: {
+    id: '编号',
+  },
 };

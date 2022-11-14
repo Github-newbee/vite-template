@@ -25,7 +25,7 @@ const props = defineProps({
 const checkPwdStrengeth = computed(() => {
   const value = unref(pwdStrengthValue);
   const res = value ? zxcvbn(unref(pwdStrengthValue)).score : -1;
-  console.log('res: ', res); // 返回密码强度值 0-4
+  // console.log('res: ', res); // 返回密码强度值 0-4
   emit('strength', res);
   return res;
 });

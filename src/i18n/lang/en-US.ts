@@ -13,4 +13,7 @@ export default {
     charts: 'charts',
     comps: 'components',
   },
+  table: {
+    id: 'id',
+  },
 };

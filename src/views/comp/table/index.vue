@@ -1,33 +1,34 @@
 <template>
-  <el-table-v2 :columns="columns" :data="data" :width="700" :height="400" fixed />
+  <el-table :data="tableData" style="width: 100%">
+    <el-table-column prop="date" :label="$t('table.id')" width="180" />
+    <el-table-column prop="name" label="Name" width="180" />
+    <el-table-column prop="address" label="Address" />
+  </el-table>
 </template>
 
 <script lang="ts" setup>
-const generateColumns = (props?: any, length = 10, prefix = 'column-') =>
-  Array.from({ length }).map((_, columnIndex) => ({
-    ...props,
-    key: `${prefix}${columnIndex}`,
-    dataKey: `${prefix}${columnIndex}`,
-    title: `Column ${columnIndex}`,
-    width: 150,
-  }));
-
-const generateData = (columns: ReturnType<typeof generateColumns>, length = 200, prefix = 'row-') =>
-  Array.from({ length }).map((_, rowIndex) => {
-    return columns.reduce(
-      (rowData, column, columnIndex) => {
-        rowData[column.dataKey] = `Row ${rowIndex} - Col ${columnIndex}`;
-        return rowData;
-      },
-      {
-        id: `${prefix}${rowIndex}`,
-        parentId: null,
-      },
-    );
-  });
-
-const columns = generateColumns(20);
-const data = generateData(columns, 1000);
+const tableData = [
+  {
+    date: '2016-05-03',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-02',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-04',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+  {
+    date: '2016-05-01',
+    name: 'Tom',
+    address: 'No. 189, Grove St, Los Angeles',
+  },
+];
 </script>
 
 <style lang="scss" scoped></style>
