@@ -21,6 +21,14 @@ const comp: AppRouteModule = {
       },
     },
     {
+      path: '/comp/scrolling',
+      name: 'Scrolling',
+      component: () => import('@/views/comp/scrolling/index.vue'),
+      meta: {
+        title: '无缝滚动',
+      },
+    },
+    {
       path: '/comp/tableComp',
       name: 'TabelComp',
       component: () => import('@/views/comp/table/index.vue'),
